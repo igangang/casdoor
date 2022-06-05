@@ -118,89 +118,208 @@ func (a *Adapter) createTable() {
 	tbMapper := core.NewPrefixMapper(core.SnakeMapper{}, tableNamePrefix)
 	a.Engine.SetTableMapper(tbMapper)
 
-	err := a.Engine.Sync2(new(Organization))
+	organization := new(Organization)
+	res, err := a.Engine.IsTableExist(organization)
 	if err != nil {
 		panic(err)
 	}
-
-	err = a.Engine.Sync2(new(User))
+	if !res {
+		err = a.Engine.Sync2(organization)
+		if err != nil {
+			panic(err)
+		}
+	}
+	
+	user := new(User)
+	res, err = a.Engine.IsTableExist(user)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(user)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Role))
+	role := new(Role)
+	res, err = a.Engine.IsTableExist(role)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(role)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Permission))
+	permission := new(Permission)
+	res, err = a.Engine.IsTableExist(permission)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(permission)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Model))
+	model := new(Model)
+	res, err = a.Engine.IsTableExist(model)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(model)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Provider))
+	provider := new(Provider)
+	res, err = a.Engine.IsTableExist(provider)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(provider)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Application))
+	application := new(Application)
+	res, err = a.Engine.IsTableExist(application)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(application)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Resource))
+	resource := new(Resource)
+	res, err = a.Engine.IsTableExist(resource)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(resource)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Token))
+	token := new(Token)
+	res, err = a.Engine.IsTableExist(token)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(token)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(VerificationRecord))
+	verificationRecord := new(VerificationRecord)
+	res, err = a.Engine.IsTableExist(verificationRecord)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(verificationRecord)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Record))
+	record := new(Record)
+	res, err = a.Engine.IsTableExist(record)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(record)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Webhook))
+	webhook := new(Webhook)
+	res, err = a.Engine.IsTableExist(webhook)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(webhook)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Syncer))
+	syncer := new(Syncer)
+	res, err = a.Engine.IsTableExist(syncer)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(syncer)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Cert))
+	cert := new(Cert)
+	res, err = a.Engine.IsTableExist(cert)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(cert)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Product))
+	product := new(Product)
+	res, err = a.Engine.IsTableExist(product)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(product)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Payment))
+	payment := new(Payment)
+	res, err = a.Engine.IsTableExist(payment)
 	if err != nil {
 		panic(err)
 	}
+	if !res {
+		err = a.Engine.Sync2(payment)
+		if err != nil {
+			panic(err)
+		}
+	}
 
-	err = a.Engine.Sync2(new(Ldap))
+	ldap := new(Ldap)
+	res, err = a.Engine.IsTableExist(ldap)
 	if err != nil {
 		panic(err)
+	}
+	if !res {
+		err = a.Engine.Sync2(ldap)
+		if err != nil {
+			panic(err)
+		}
 	}
 }
 
